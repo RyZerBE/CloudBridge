@@ -1,0 +1,10 @@
+name: CloudBridge
+api: 3.0.0
+main: BauboLP\Cloud\CloudBridge
+version: 1.0
+author: BauboLP
+description: CloudBridge for RyzerCloud
+
+permissions:
+  cloud.admin:
+    default: op
