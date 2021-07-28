@@ -101,6 +101,7 @@ class CloudBridge extends PluginBase
             }
         $this->getClient()->getPacketHandler()->writePacket($packet);
         $this->getClient()->getRequestHandler()->stop(true);
+        CloudBridge::getCloudProvider()->removeServerFromBlackList(CloudProvider::getServer());
     }
 
     /**
