@@ -15,6 +15,7 @@ use BauboLP\Cloud\Packets\StopGroupPacket;
 use BauboLP\Cloud\Packets\StopServerPacket;
 use pocketmine\Server;
 use pocketmine\utils\Config;
+use function in_array;
 
 class CloudProvider
 {
@@ -185,6 +186,16 @@ class CloudProvider
             $runningServers[] = $server;
         }
         return $runningServers;
+    }
+
+    /**
+     * @param string $serverName
+     * @return int|null
+     */
+    public function getServerPort(string $serverName): ?int {
+        if(!in_array($serverName, $this->getRunningServers())) return null;
+        $c = new Config("/root/RyzerCloud/servers/$serverName/server.properties");
+        return $c->get("server-port", null);
     }
 
     /**
