@@ -11,7 +11,10 @@ use pocketmine\command\ConsoleCommandSender;
 
 class ServerTimingPacket extends DataPacket
 {
-
+    /**
+     * @api
+     * addData("timing", TIMING_LINK)
+     */
     public function __construct()
     {
         parent::__construct();

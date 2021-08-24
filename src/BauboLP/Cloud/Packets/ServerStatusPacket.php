@@ -10,8 +10,13 @@ use pocketmine\Server;
 
 class ServerStatusPacket extends DataPacket
 {
-
-
+    /**
+     * @api
+     * addData("tps", TPS)
+     * addData("tpsPercent", TPS_PERCENT)
+     * addData("tpsAverage", TPS_AVERAGE)
+     * addData("tpsPercentAverage", TPS_PERCENT_AVERAGE)
+     */
     public function __construct()
     {
         parent::__construct();
