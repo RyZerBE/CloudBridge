@@ -27,7 +27,7 @@ abstract class DataPacket
             #var_dump($className);
         } catch (\ReflectionException $e) {}
 
-        $this->data["serverName"] = CloudProvider::getServer();
+        $this->data["serverName"] = CloudProvider::getServer();$this->data["gameServer"] = CloudProvider::getServer();
         $this->data["password"] = $this->getPassword();
     }
 

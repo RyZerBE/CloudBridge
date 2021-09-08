@@ -24,6 +24,7 @@ use BauboLP\Cloud\Packets\PlayerMessagePacket;
 use BauboLP\Cloud\Packets\PlayerMoveServerPacket;
 use BauboLP\Cloud\Packets\PlayerQuitNetworkPacket;
 use BauboLP\Cloud\Packets\RemovePlayerFromCloudNotifyPacket;
+use BauboLP\Cloud\Packets\ServerInfoPacket;
 use BauboLP\Cloud\Packets\ServerShutdownPacket;
 use BauboLP\Cloud\Packets\ServerConnectPacket;
 use BauboLP\Cloud\Packets\ServerStatusPacket;
@@ -53,14 +54,11 @@ class PacketHandler
         }
     }
 
-    public function registerPackets()
-    {
+    public function registerPackets(){
         $packets = [
             "InformationPacket" => InformationPacket::class,
             "ServerConnectPacket" => ServerConnectPacket::class,
             "ServerShutdownPacket" => ServerShutdownPacket::class,
-            "KeepAlivePacket" => KeepAlivePacket::class,
-            "ServerStatusPacket" => ServerStatusPacket::class,
             "CreateServerPacket" => CreateServerPacket::class,
             "CloudReloadPacket" => CloudReloadPacket::class,
             "StopGroupPacket" => StopGroupPacket::class,
@@ -77,12 +75,13 @@ class PacketHandler
             "PlayerDisconnectPacket" => PlayerDisconnectPacket::class,
             "PlayerJoinNetworkPacket" => PlayerJoinNetworkPacket::class,
             "PlayerQuitNetworkPacket" => PlayerQuitNetworkPacket::class,
-            "MatchPacket" => MatchPacket::class
+            "MatchPacket" => MatchPacket::class,
+            "ServerInfoPacket" => ServerInfoPacket::class
         ];
 
-        foreach (array_keys($packets) as $packet)
+        foreach(array_keys($packets) as $packet)
             Packets::registerPacket($packet, $packets[$packet]);
 
-        MainLogger::getLogger()->info(CloudBridge::Prefix . "Es wurden " . count($packets) . " Packets registriert");
+        MainLogger::getLogger()->info(CloudBridge::Prefix."Es wurden ".count($packets)." Packets registriert");
     }
 }
