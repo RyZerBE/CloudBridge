@@ -6,7 +6,7 @@ class MatchPacket extends DataPacket {
 
     /**
      * @api
-     * addData("gameServer", SERVER_NAME)
+     * addData("group", GROUP_NAME)
      */
     public function handle()
     {
