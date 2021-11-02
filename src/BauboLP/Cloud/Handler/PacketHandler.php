@@ -17,6 +17,7 @@ use BauboLP\Cloud\Packets\DispatchProxyCommandPacket;
 use BauboLP\Cloud\Packets\InformationPacket;
 use BauboLP\Cloud\Packets\KeepAlivePacket;
 use BauboLP\Cloud\Packets\MatchPacket;
+use BauboLP\Cloud\Packets\NetworkInfoPacket;
 use BauboLP\Cloud\Packets\Packets;
 use BauboLP\Cloud\Packets\PlayerDisconnectPacket;
 use BauboLP\Cloud\Packets\PlayerJoinNetworkPacket;
@@ -76,7 +77,8 @@ class PacketHandler
             "PlayerJoinNetworkPacket" => PlayerJoinNetworkPacket::class,
             "PlayerQuitNetworkPacket" => PlayerQuitNetworkPacket::class,
             "MatchPacket" => MatchPacket::class,
-            "ServerInfoPacket" => ServerInfoPacket::class
+            "ServerInfoPacket" => ServerInfoPacket::class,
+            "NetworkInfoPacket" => NetworkInfoPacket::class
         ];
 
         foreach(array_keys($packets) as $packet)

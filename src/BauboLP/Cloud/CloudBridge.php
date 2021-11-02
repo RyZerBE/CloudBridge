@@ -12,6 +12,7 @@ use BauboLP\Cloud\Events\ClientRestartEvent;
 use BauboLP\Cloud\listener\ChatListener;
 use BauboLP\Cloud\Packets\CreatePrivateServerPacket;
 use BauboLP\Cloud\Packets\CreateServerPacket;
+use BauboLP\Cloud\Packets\NetworkInfoPacket;
 use BauboLP\Cloud\Packets\ServerShutdownPacket;
 use BauboLP\Cloud\Packets\ServerConnectPacket;
 use BauboLP\Cloud\Provider\CloudProvider;
@@ -55,7 +56,6 @@ class CloudBridge extends PluginBase
         $this->getServer()->getPluginManager()->registerEvents(new ChatListener(), $this);
 
         //MainLogger::getLogger()->setLogDebug(true);
-
     }
 
     private function loadAllowedPlayers(): void
