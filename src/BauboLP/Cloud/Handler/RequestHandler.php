@@ -61,7 +61,7 @@ class RequestHandler extends \Thread
         while (!$this->stop) {
             $buffer = null;
             try {
-                $buffer = @socket_read($this->socket, 2048, PHP_NORMAL_READ);
+                $buffer = @socket_read($this->socket, 65535, PHP_NORMAL_READ);
             } catch (\Exception $e){
                 break;
             }
